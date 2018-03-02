@@ -1,0 +1,65 @@
+{
+	"info": {
+		"name": "serviceapi",
+		"_postman_id": "52bb2c67-3f58-49df-b2d7-159a634579f8",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get title",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/movies/get/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movies",
+						"get",
+						"4"
+					]
+				},
+				"description": "Get title by id"
+			},
+			"response": []
+		},
+		{
+			"name": "Put title",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/movies/set/6?title=Godzilla",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movies",
+						"set",
+						"6"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Godzilla",
+							"equals": true
+						}
+					]
+				},
+				"description": "Set title by id"
+			},
+			"response": []
+		}
+	]
+}
