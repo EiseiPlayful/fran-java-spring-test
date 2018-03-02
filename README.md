@@ -26,6 +26,14 @@ mvn spring-boot:run
 [fran-java-spring-test](https://documenter.getpostman.com/collection/view/3834054-52bb2c67-3f58-49df-b2d7-159a634579f8)
 
 
+## Endpoints
+
+Leer -> http://localhost:8080/api/movies/get/{id}
+
+Agregar -> http://localhost:8080/api/movies/set/{id}?title={title}
+
+
+
 ## Copyright
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
