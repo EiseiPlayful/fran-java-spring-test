@@ -24,7 +24,7 @@ pipeline {
         stage ('Deployment Stage') {
             steps {
                 withMaven(maven : 'M3') {
-                    sh 'mvn spring-boot:run'
+                    sh 'nohup mvn spring-boot:run &'
                 }
             }
         }
