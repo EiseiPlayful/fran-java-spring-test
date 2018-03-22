@@ -23,10 +23,12 @@ pipeline {
         stage ('SonarQube Analysis Stage') {
 
             steps {
-                withSonarQubeEnv('SQ') {
-                    sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
-                }
-            }
+        			script {
+          			scannerHome = tool 'SQS'
+        			}
+        			withSonarQubeEnv('SQS') {
+          			sh '${scannerHome}/bin/sonar-scanner'
+        			}
         }
 
         stage ('Deployment Stage') {
