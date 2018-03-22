@@ -1,9 +1,12 @@
 pipeline {
     agent any
 
+	environment {
+        SONAR_SCANNER_HOME = tool 'SQS';
+    }
+    
     stages {
         stage ('Compile Stage') {
-
             steps {
                 withMaven(maven : 'M3') {
                     sh 'mvn clean compile'
@@ -12,7 +15,6 @@ pipeline {
         }
 
         stage ('Junit Testing Stage') {
-
             steps {
                 withMaven(maven : 'M3') {
                     sh 'mvn test'
@@ -21,11 +23,9 @@ pipeline {
         }
         
         stage ('SonarQube Analysis Stage') {
-			
-			def scannerHome = tool 'SQS';
             steps {
         			withSonarQubeEnv('SQ') {
-          			sh "${scannerHome}/bin/sonar-scanner"
+          			sh "${SONAR_SCANNER_HOME}/bin/sonar-scanner"
         			}
         		}
         }
