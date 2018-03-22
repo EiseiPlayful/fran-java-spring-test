@@ -29,6 +29,7 @@ pipeline {
         			withSonarQubeEnv('SQS') {
           			sh '${scannerHome}/bin/sonar-scanner'
         			}
+        		}
         }
 
         stage ('Deployment Stage') {
