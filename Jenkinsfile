@@ -3,6 +3,7 @@ pipeline {
 
 	environment {
         SONAR_SCANNER_HOME = tool 'SQS';
+        OPENSHIFT_CLI = tool 'OSCT';
     }
     
     stages {
@@ -40,9 +41,9 @@ pipeline {
         
         stage ('Deploy on OpenShift Stage') {  
         		steps {
-         		sh 'oc login -u developer'
-           	 	sh 'oc project java-app'  
-            		sh 'oc start-build java-app -n java-app'
+         		sh "${OPENSHIFT_CLI}/oc login -u developer"
+           	 	sh "${OPENSHIFT_CLI}/oc project java-app"  
+            		sh "${OPENSHIFT_CLI}/oc start-build java-app -n java-app"
         		}
         }
     }
