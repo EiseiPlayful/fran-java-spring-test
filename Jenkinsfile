@@ -39,9 +39,11 @@ pipeline {
         }
         
         stage ('Deploy on OpenShift Stage') {  
-         	sh 'oc login -u developer'
-            sh  'oc project java-app'  
-            sh 'oc start-build java-app -n java-app'
+        		steps {
+         		sh 'oc login -u developer'
+           	 	sh 'oc project java-app'  
+            		sh 'oc start-build java-app -n java-app'
+        		}
         }
     }
 }
