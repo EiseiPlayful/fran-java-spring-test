@@ -43,7 +43,7 @@ pipeline {
         		steps {
          		sh 'oc login -u developer'
            	 	sh 'oc project java-app'
-            		sh 'oc start-build java-app -n java-app'
+            		sh 'oc start-build java-app -n java-app --certificate-authority=/Users/eiseidf/Documents/workspace/ca.crt'
         		}
         }
     }
