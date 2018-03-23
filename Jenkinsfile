@@ -30,12 +30,18 @@ pipeline {
         		}
         }
 
-        stage ('Deployment Stage') {
+        stage ('Push Nexus Stage') {
             steps {
                 withMaven(maven : 'M3') {
-                    sh 'mvn package'
+                    sh 'mvn package -DskipTests=true'
                 }
             }
+        }
+        
+        stage ('Deploy on OpenShift Stage') {  
+         	sh 'oc login -u developer'
+            sh  'oc project java-app'  
+            sh 'oc start-build java-app -n java-app'
         }
     }
 }
