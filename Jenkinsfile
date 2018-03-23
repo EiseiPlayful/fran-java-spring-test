@@ -41,11 +41,9 @@ pipeline {
         
         stage ('Deploy on OpenShift Stage') {  
         		steps {
-        			openshift.withCluster() { 
- 			    		openshift.withProject('java-app') {
-    						openshift.raw('oc start-build java-app -n java-app')
-  					}
-				}
+         		sh '${OPENSHIFT_CLI}/oc login -u developer --certificate-authority=/Users/eiseidf/Documents/workspace/ca.crt'
+           	 	sh '${OPENSHIFT_CLI}/oc project java-app'
+            		sh '${OPENSHIFT_CLI}/oc start-build java-app -n java-app'
         		}
         }
     }
