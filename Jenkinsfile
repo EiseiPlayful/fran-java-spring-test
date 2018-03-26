@@ -41,9 +41,9 @@ pipeline {
         
         stage ('Deploy on OpenShift Stage') {  
         		steps {
-         		sh '${OPENSHIFT_CLI}/oc login -u developer --certificate-authority=/Users/eiseidf/Documents/workspace/ca.crt'
-           	 	sh '${OPENSHIFT_CLI}/oc project java-app'
-            		sh '${OPENSHIFT_CLI}/oc start-build java-app -n java-app'
+         		sh '${OPENSHIFT_CLI}oc oc login localhost:8443 --insecure-skip-tls-verify=false --username=developer --password=not_password'
+           	 	sh '${OPENSHIFT_CLI}oc project java-app'
+            		sh '${OPENSHIFT_CLI}oc start-build java-app -n java-app'
         		}
         }
     }
