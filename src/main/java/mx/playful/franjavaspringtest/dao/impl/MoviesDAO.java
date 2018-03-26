@@ -11,7 +11,7 @@ public class MoviesDAO implements IMoviesDAO {
 	@Override
 	public MoviesDTO getTitle(Integer id) throws Exception {
 		// Database access
-		return new MoviesDTO(id, " A Clockwork Orange - 1970");
+		return new MoviesDTO(id, " A Clockwork Orange - 1970 [15:22]");
 	}
 
 	@Override
