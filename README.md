@@ -1,39 +1,94 @@
-# fran-java-spring-test
+# hub-redis-service
 
-[![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+Esta API proporciona la capidad de persisir y/o leer la informacion que necesita LoyaltyHub en [Redis](https://redis.io/), se puede persistir cualquier objeto declarado con el componente [hub-commons]().
 
-API Rest minimal
+## Empezando
 
-## Requirements
 
-For building and running the application you need:
+De esta forma se tendra una copia local del proyecto.
 
-- [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-- [Maven 3](https://maven.apache.org)
+### Prerequisitos
 
-## Running the application locally
+Es necesario tener instaladas las siguientes herramientas para poder probar, desarrollar o modificar el API
 
-There are several ways to [Run a Spring Boot application](https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-running-your-application.html) on your local machine
+[GIT](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+[Maven 3 or later](https://maven.apache.org/install.html)
+[JDK 8 or later](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+[Redis Server 4 or later](https://redis.io/topics/quickstart)
 
-Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:
-
-```shell
-mvn spring-boot:run
+```
+Give examples
 ```
 
-## Documetation Postman
+### Installing
 
-[fran-java-spring-test](https://documenter.getpostman.com/collection/view/3834054-52bb2c67-3f58-49df-b2d7-159a634579f8)
+Para comenzar con las pruebas, desarrollo o modificacion del API se debe clonar el repositorio de la siguiente manera:
 
-
-## Endpoints
-
-Leer -> http://localhost:8080/api/movies/get/{id}
-
-Agregar -> http://localhost:8080/api/movies/set/{id}?title={title}
+git clone git://github.com/schacon/grit.git
 
 
 
-## Copyright
+```
+Give the example
+```
+
+And repeat
+
+```
+until finished
+```
+
+End with an example of getting some data out of the system or using it for a little demo
+
+## Running the tests
+
+Explain how to run the automated tests for this system
+
+### Break down into end to end tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+### And coding style tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system
+
+## Built With
+
+* [Maven](https://maven.apache.org/) - Dependency Management
+
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+
+## Authors
+
+* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Hat tip to anyone who's code was used
+* Inspiration
+* etc
